@@ -4,7 +4,6 @@ import guru.springframework.spring5recipeapp.domain.Category;
 import guru.springframework.spring5recipeapp.domain.Difficulty;
 import guru.springframework.spring5recipeapp.domain.Ingredient;
 import guru.springframework.spring5recipeapp.domain.Notes;
-import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,7 +21,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 public class RecipeCommand {
-    private Long id;
+    private String id;
 
     @NotBlank
     @Size(min = 3, max = 255)

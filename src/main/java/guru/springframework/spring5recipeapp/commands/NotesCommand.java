@@ -1,8 +1,6 @@
 package guru.springframework.spring5recipeapp.commands;
 
 import guru.springframework.spring5recipeapp.domain.Recipe;
-import javax.persistence.Lob;
-import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +9,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 public class NotesCommand {
-    private Long id;
+    private String id;
     private RecipeCommand recipe;
     private String recipeNotes;
 }
