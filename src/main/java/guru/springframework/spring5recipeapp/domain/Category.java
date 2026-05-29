@@ -1,6 +1,11 @@
 package guru.springframework.spring5recipeapp.domain;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Set;
 
@@ -10,8 +15,13 @@ import java.util.Set;
 
 @Getter
 @Setter
+@Document
 public class Category {
-    private String Id;
+    @Id
+    @MongoId(FieldType.OBJECT_ID)
+    private String id;
     private String description;
+
+    @DBRef
     private Set<Recipe> recipes;
 }

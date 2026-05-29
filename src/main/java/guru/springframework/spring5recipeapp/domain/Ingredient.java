@@ -4,6 +4,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
 
@@ -14,11 +18,16 @@ import java.math.BigDecimal;
 @Setter
 public class Ingredient {
 
-    private String Id;
+    @Id
+    @MongoId(FieldType.OBJECT_ID)
+    private String id;
     private String description;
     private BigDecimal amount;
+
+    @DBRef
     private UnitOfMeasure uom;
-    private Recipe recipe;
+
+    //private Recipe recipe;
 
     public Ingredient() {
 
@@ -34,6 +43,6 @@ public class Ingredient {
         this.description = description;
         this.amount = amount;
         this.uom = uom;
-        this.recipe = recipe;
+        //this.recipe = recipe;
     }
 }
